@@ -1,161 +1,221 @@
 /* style.css */
 
+/* Define CSS Variables for easy theme management */
 :root {
-    --primary-color: #003366;
-    --secondary-color: #f0f0f0;
-    --text-color: #333;
-    --white-color: #ffffff;
-    --card-border-color: #ccc;
-    --button-hover-color: #004488;
+    --primary-color: #003366; /* Dark Blue for headers, backgrounds, buttons */
+    --secondary-color: #f0f0f0; /* Light Grey for sections */
+    --text-color: #333; /* Dark Grey for general text */
+    --white-color: #ffffff; /* White for backgrounds and text on dark elements */
+    --card-border-color: #ddd; /* Light grey for card borders */
+    --button-hover-color: #004488; /* Slightly darker blue for button hover */
+    --shadow-light: rgba(0,0,0,0.1);
+    --shadow-medium: rgba(0,0,0,0.15);
 }
 
+/* Base Body Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background: var(--white-color);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.6; /* Improved readability */
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
+/* Header Styles */
 header {
     background: var(--primary-color);
     color: var(--white-color);
     padding: 1rem;
     text-align: center;
-    position: sticky; /* Make header sticky */
+    position: sticky; /* Makes the header stick to the top */
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000; /* Ensures header is above other content */
+    box-shadow: 0 2px 5px var(--shadow-light); /* Subtle shadow for depth */
 }
 
 header h1 {
     margin: 0;
     padding-bottom: 0.5rem;
+    font-size: 2.2rem; /* Adjusted font size */
 }
 
+/* Navigation Styles */
 nav a {
     color: var(--white-color);
     margin: 0 1rem;
     text-decoration: none;
     padding: 0.5rem 0;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Smooth hover effect */
+    font-weight: 500; /* Slightly bolder links */
 }
 
 nav a:hover {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Highlight on hover */
 }
 
+/* Hero Section Styles */
 .hero {
-    padding: 6rem 2rem;
-    background: var(--secondary-color);
+    padding: 6rem 2rem; /* Increased padding for more visual space */
+    background: var(--primary-color); /* Dark blue background */
+    color: var(--white-color);
     text-align: center;
-    color: var(--primary-color);
-    background-image: url('https://via.placeholder.com/1500x500/003366/f0f0f0?text=Modern+Web+Design'); /* Example background image */
+    /* Optional: Add a subtle background image or gradient */
+    background-image: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('https://placehold.co/1500x500/003366/f0f0f0?text=Your+Vision+Crafted');
     background-size: cover;
     background-position: center;
-    color: var(--white-color);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px; /* Minimum height for the hero section */
 }
 
 .hero h2 {
-    font-size: 2.5rem;
+    font-size: 3rem; /* Larger heading */
     margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px var(--shadow-medium); /* Text shadow for better readability */
 }
 
 .hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 2rem auto;
+    font-size: 1.3rem; /* Larger paragraph text */
+    max-width: 800px;
+    margin: 0 auto 2.5rem auto; /* Space below paragraph */
+    text-shadow: 1px 1px 2px var(--shadow-light);
 }
 
+/* Call to Action Button Styles */
 .btn {
     display: inline-block;
-    background: var(--primary-color);
-    color: var(--white-color);
-    padding: 0.8rem 1.5rem;
+    background: var(--secondary-color); /* Light grey button */
+    color: var(--primary-color); /* Dark blue text */
+    padding: 1rem 2rem;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease, transform 0.2s ease;
+    border-radius: 8px; /* More rounded corners */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* All around smooth transition */
     border: none;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600; /* Bolder text */
+    box-shadow: 0 4px 8px var(--shadow-medium); /* Button shadow */
 }
 
 .btn:hover {
-    background: var(--button-hover-color);
-    transform: translateY(-2px);
+    background: var(--white-color); /* Lighter on hover */
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 6px 12px var(--shadow-medium);
 }
 
+/* Section Title Common Styles */
 .section-title {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem; /* Larger section titles */
     color: var(--primary-color);
-    margin-bottom: 2rem;
-    padding-top: 2rem;
+    margin-bottom: 2.5rem; /* More space below title */
+    padding-top: 3rem; /* Padding at the top of sections */
+    position: relative;
 }
 
-.services, .portfolio, .testimonials, .about-content, .contact-info-section {
-    padding: 2rem;
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+/* Main Content Section Padding */
+.services, .portfolio, .testimonials, .about-content, .contact-container {
+    padding: 3rem 2rem; /* Consistent padding for content sections */
     max-width: 1200px;
     margin: auto;
 }
 
-.services-grid, .portfolio-grid {
+/* Grid Layout for Services & Portfolio */
+.services-grid, .portfolio-grid, .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid columns */
+    gap: 2.5rem; /* Increased gap between items */
     padding-bottom: 2rem;
 }
 
+/* Card Styles (used for services, portfolio items) */
 .card {
     background: var(--white-color);
     border: 1px solid var(--card-border-color);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 2rem; /* Increased padding */
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: 0 5px 15px var(--shadow-light); /* Deeper shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content evenly */
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transform: translateY(-8px); /* More pronounced lift effect */
+    box-shadow: 0 8px 20px var(--shadow-medium); /* Darker shadow on hover */
 }
 
 .card h3 {
     color: var(--primary-color);
     margin-top: 0;
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Larger card titles */
+}
+
+.card p {
+    font-size: 1rem;
+    flex-grow: 1; /* Allow paragraphs to take up available space */
 }
 
 /* Portfolio Specifics */
 .portfolio-item img {
     max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 1rem;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
 }
 
-/* Testimonials Specifics */
+.portfolio-item:hover img {
+    transform: scale(1.03); /* Slight zoom on image hover */
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: var(--secondary-color); /* Light grey background for testimonials */
+    padding-bottom: 4rem;
+}
+
 .testimonial-card {
-    background: var(--secondary-color);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: var(--white-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-light);
     margin-bottom: 2rem;
+    font-style: italic;
+    line-height: 1.8;
 }
 
 .testimonial-card p {
-    font-style: italic;
-    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
 }
 
 .testimonial-card .author {
     font-weight: bold;
     text-align: right;
     color: var(--primary-color);
+    font-size: 1rem;
+    display: block;
+    margin-top: 1.5rem;
 }
 
 /* About Page Specifics */
@@ -167,113 +227,141 @@ nav a:hover {
     margin-bottom: 1.5rem;
 }
 
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+.about-content ul {
+    list-style: none; /* Remove default list style */
+    padding: 0;
     margin-top: 2rem;
 }
 
+.about-content ul li {
+    background: var(--secondary-color);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.about-content ul li strong {
+    color: var(--primary-color);
+}
+
+/* Team Section */
 .team-member {
     text-align: center;
+    background: var(--white-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-light);
 }
 
 .team-member img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%; /* Circular images */
     object-fit: cover;
     margin-bottom: 1rem;
-    border: 3px solid var(--primary-color);
+    border: 4px solid var(--primary-color); /* Border around image */
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover img {
+    transform: scale(1.05); /* Slight zoom on team member image */
 }
 
 .team-member h4 {
     margin: 0.5rem 0 0.2rem;
     color: var(--primary-color);
+    font-size: 1.4rem;
 }
 
 .team-member p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #666;
 }
-
 
 /* Contact Page Specifics */
 .contact-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: auto;
-    padding: 2rem;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 3rem; /* Increased gap */
+    align-items: flex-start; /* Align items to the start of the cross axis */
 }
 
 .contact-info-section, .contact-form {
-    flex: 1 1 45%; /* Allows sections to wrap on smaller screens */
-    min-width: 300px; /* Ensures minimum width before wrapping */
+    flex: 1 1 45%; /* Flex-basis for two-column layout, allows wrapping */
+    min-width: 300px; /* Minimum width before wrapping */
 }
 
 .contact-form {
-    background: var(--white-color);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: var(--secondary-color); /* Light grey background for form */
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px var(--shadow-light); /* Prominent shadow for form */
 }
 
 .contact-form label {
     display: block;
     margin: 1rem 0 0.5rem;
-    font-weight: bold;
+    font-weight: 600;
     color: var(--primary-color);
+    font-size: 1.05rem;
 }
 
 .contact-form input,
 .contact-form textarea {
-    width: calc(100% - 1rem); /* Account for padding */
-    padding: 0.75rem;
-    margin-bottom: 1rem;
+    width: calc(100% - 20px); /* Adjust for padding */
+    padding: 10px;
+    margin-bottom: 1.5rem; /* Increased margin */
     border: 1px solid var(--card-border-color);
-    border-radius: 4px;
+    border-radius: 5px;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-color: var(--primary-color);
     outline: none;
-    box-shadow: 0 0 5px rgba(0,51,102,0.2);
+    box-shadow: 0 0 8px rgba(0,51,102,0.3); /* Focus effect */
 }
 
 .contact-form button {
     width: 100%;
-    padding: 1rem;
+    padding: 1.2rem; /* Larger button */
     background: var(--primary-color);
     color: var(--white-color);
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1.1rem;
-    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px var(--shadow-medium);
 }
 
 .contact-form button:hover {
     background: var(--button-hover-color);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px var(--shadow-medium);
 }
 
 .contact-info-section h3 {
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.6rem;
 }
 
 .contact-info-section p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
+    font-size: 1.05rem;
 }
 
 .contact-info-section a {
     color: var(--primary-color);
     text-decoration: none;
+    transition: text-decoration 0.3s ease;
 }
 
 .contact-info-section a:hover {
@@ -281,86 +369,150 @@ nav a:hover {
 }
 
 .map-container {
-    margin-top: 2rem;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 2.5rem;
+    border-radius: 10px;
+    overflow: hidden; /* Ensures map corners are rounded */
+    box-shadow: 0 4px 15px var(--shadow-light);
 }
 
 .map-container iframe {
     width: 100%;
-    height: 300px;
+    height: 350px; /* Increased map height */
     border: 0;
 }
 
-
+/* Footer Styles */
 footer {
     text-align: center;
     background: var(--primary-color);
     color: var(--white-color);
-    padding: 1.5rem;
-    margin-top: 2rem;
-    font-size: 0.9rem;
+    padding: 1.8rem; /* Increased padding */
+    margin-top: 3rem; /* Space above footer */
+    font-size: 0.95rem;
+    box-shadow: 0 -2px 5px var(--shadow-light);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero {
-        padding: 4rem 1rem;
+/* Responsive Design Adjustments */
+@media (max-width: 992px) {
+    .hero h2 {
+        font-size: 2.5rem;
     }
+    .hero p {
+        font-size: 1.1rem;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .services-grid, .portfolio-grid, .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+}
 
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    nav a {
+        margin: 0 0.8rem;
+        font-size: 0.95rem;
+    }
+    .hero {
+        padding: 5rem 1.5rem;
+    }
     .hero h2 {
         font-size: 2rem;
     }
-
     .hero p {
         font-size: 1rem;
+        margin-bottom: 2rem;
     }
-
-    .services-grid, .portfolio-grid, .team-grid {
-        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
     }
-
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .services, .portfolio, .testimonials, .about-content, .contact-container {
+        padding: 2.5rem 1.5rem;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+    .card h3 {
+        font-size: 1.6rem;
+    }
+    .testimonial-card, .team-member {
+        padding: 1.5rem;
+    }
     .contact-container {
-        flex-direction: column;
+        flex-direction: column; /* Stack contact sections vertically */
+        gap: 2.5rem;
     }
-
     .contact-form, .contact-info-section {
-        flex: 1 1 100%;
+        flex: 1 1 100%; /* Take full width when stacked */
+        min-width: unset; /* Reset min-width */
+    }
+    .contact-form {
+        padding: 2rem;
+    }
+    .map-container iframe {
+        height: 250px;
     }
 }
 
 @media (max-width: 480px) {
+    header {
+        padding: 0.8rem;
+    }
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
-
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
     nav a {
-        margin: 0 0.5rem;
-    }
-
-    .hero {
-        padding: 3rem 1rem;
-    }
-
-    .hero h2 {
-        font-size: 1.8rem;
-    }
-
-    .btn {
-        padding: 0.6rem 1.2rem;
+        margin: 0;
         font-size: 0.9rem;
     }
-
+    .hero {
+        padding: 4rem 1rem;
+        min-height: 300px;
+    }
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+    .hero p {
+        font-size: 0.9rem;
+    }
+    .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    .section-title {
+        font-size: 1.7rem;
+        margin-bottom: 1.5rem;
+    }
+    .services, .portfolio, .testimonials, .about-content, .contact-container {
+        padding: 2rem 1rem;
+    }
     .card {
         padding: 1rem;
     }
-
     .card h3 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
-
-    .section-title {
-        font-size: 1.8rem;
+    .contact-form label {
+        font-size: 1rem;
+    }
+    .contact-form button {
+        padding: 1rem;
+        font-size: 1.1rem;
     }
 }
+
