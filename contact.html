@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Example Design Agency</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> </head>
+    <!-- Poppins font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <header>
         <h1>Contact Us</h1>
@@ -16,42 +19,53 @@
         </nav>
     </header>
 
-    <section class="contact-container">
-        <div class="contact-info-section">
-            <h2 class="section-title">Get in Touch</h2>
-            <p>We'd love to hear from you! Whether you have a project in mind, a question, or just want to say hello, feel free to reach out.</p>
-            <h3>Our Office</h3>
-            <p>123 Design Street,<br>Creative City, DC 12345<br>India</p>
-            <h3>Phone</h3>
-            <p><a href="tel:+919876543210">+91 98765 43210</a></p>
-            <h3>Email</h3>
-            <p><a href="mailto:info@exampledesign.com">info@exampledesign.com</a></p>
+    <main>
+        <section class="contact-container">
+            <div class="contact-info-section">
+                <h2 class="section-title">Get in Touch</h2>
+                <p>We're excited to hear from you and discuss how we can help bring your digital vision to life. Whether you have a project in mind, a question about our services, or just want to chat, feel free to reach out!</p>
 
-            <h3 style="margin-top: 2rem;">Find Us on the Map</h3>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.250567086817!2d144.963102115682!3d-37.81720897975199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b93700b093%3A0x50456784d0b1d30!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <h3>Our Office</h3>
+                <p>Example Design Agency Headquarters<br>
+                123 Creative Boulevard,<br>
+                Innovation City, STATE 12345<br>
+                Country: India</p>
+
+                <h3>Phone</h3>
+                <p><a href="tel:+911234567890">+91 (123) 456-7890</a></p>
+
+                <h3>Email</h3>
+                <p><a href="mailto:info@exampledesign.com">info@exampledesign.com</a></p>
+
+                <h3 style="margin-top: 2.5rem;">Find Us on the Map</h3>
+                <div class="map-container">
+                    <!-- Replace the iframe src with your actual Google Maps embed code -->
+                    <!-- Go to Google Maps, search for your location, click 'Share' -> 'Embed a map' and copy the iframe code -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15654.524956339023!2d76.54146059999999!3d10.97011985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7d483b6329c2f%3A0xc07a82b9e28f1b62!2sKerala!5e0!3m2!1sen!2sin!4v1719131499525!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
-        </div>
 
-        <div class="contact-form">
-            <h2 class="section-title">Send Us a Message</h2>
-            <form action="#" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+            <div class="contact-form">
+                <h2 class="section-title">Send Us a Message</h2>
+                <form action="#" method="post">
+                    <!-- For a real website, you would replace '#' with a server-side script URL -->
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
 
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" placeholder="Regarding a new project / general inquiry etc.">
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="7" required></textarea>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="8" placeholder="Tell us more about your project or question..." required></textarea>
 
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer>
         &copy; 2025 Example Design Agency. All rights reserved.
